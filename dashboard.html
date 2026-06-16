@@ -3,167 +3,112 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZM Project Dashboard</title>
+<title>ZM Project Admin</title>
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:#020617;
-color:white;
-padding:20px;
-}
-
-.header{
-background:#111827;
-padding:20px;
-border-radius:15px;
-text-align:center;
-margin-bottom:20px;
-}
-
-.card{
-background:#1e293b;
-padding:20px;
-border-radius:15px;
-margin-bottom:20px;
-}
-
-input{
-width:100%;
-padding:12px;
-margin-top:10px;
-border:none;
-border-radius:8px;
-background:#334155;
-color:white;
-}
-
-button{
-width:100%;
-padding:12px;
-margin-top:15px;
-background:#2563eb;
-color:white;
-border:none;
-border-radius:8px;
-font-size:16px;
-}
-
-.user{
-background:#334155;
-padding:10px;
-margin-top:10px;
-border-radius:8px;
-}
-
-</style>
+<link rel="stylesheet" href="dashboard.css">
 
 </head>
 
 <body>
 
+<div class="sidebar">
+
+<div class="logo">
+<h1>ZM</h1>
+<p>Secure • Private • Encrypted</p>
+</div>
+
+<ul>
+
+<li class="active">🏠 Dashboard</li>
+
+<li>👥 Users</li>
+
+<li>💬 Chats</li>
+
+<li>📂 Files</li>
+
+<li>⚙️ Settings</li>
+
+<li>🚪 Logout</li>
+
+</ul>
+
+</div>
+
+<div class="main">
+
 <div class="header">
 
-<h1>👑 ZM Admin Dashboard</h1>
+<div>
 
-<p>Manage Your Users</p>
+<h1>👑 Welcome Admin</h1>
+
+<p>ZM Secure Communication System</p>
+
+</div>
+
+<div class="profile">
+
+🛡️
+
+</div>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Total Users</h3>
+
+<h2 id="count">0</h2>
 
 </div>
 
 <div class="card">
 
-<h2>Create User</h2>
+<h3>Private Chats</h3>
 
-<input id="username" placeholder="Username">
-
-<input id="password" placeholder="Password">
-
-<button onclick="addUser()">Add User</button>
+<h2>0</h2>
 
 </div>
 
 <div class="card">
 
-<h2>User List</h2>
+<h3>Storage Used</h3>
 
-<div id="list"></div>
+<h2>0 MB</h2>
 
 </div>
 
-<script>
-
-function loadUsers(){
-
-let users=JSON.parse(localStorage.getItem("users"))||[];
-
-let html="";
-
-users.forEach((x,i)=>{
-
-html+=`
-<div class="user">
-${i+1}. ${x.username}
 </div>
-`;
 
-});
+<div class="user-box">
 
-document.getElementById("list").innerHTML=html;
+<div class="top">
 
-}
+<h2>User Management</h2>
 
-function addUser(){
+<button id="addBtn">＋ Add User</button>
 
-let u=document.getElementById("username").value;
+</div>
 
-let p=document.getElementById("password").value;
+<div id="userlist">
 
-if(u==""||p==""){
+<div class="empty">
 
-alert("Fill all fields");
+No Users Available
 
-return;
+</div>
 
-}
+</div>
 
-let users=JSON.parse(localStorage.getItem("users"))||[];
+</div>
 
-if(users.length>=5){
+</div>
 
-alert("Maximum 5 Users Allowed");
-
-return;
-
-}
-
-users.push({
-
-username:u,
-
-password:p
-
-});
-
-localStorage.setItem("users",JSON.stringify(users));
-
-document.getElementById("username").value="";
-
-document.getElementById("password").value="";
-
-loadUsers();
-
-}
-
-loadUsers();
-
-</script>
+<script src="dashboard.js"></script>
 
 </body>
 </html>
