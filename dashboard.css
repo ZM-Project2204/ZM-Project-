@@ -306,3 +306,41 @@ grid-template-columns:1fr;
 }
 
 }
+.userCard{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:15px;
+
+margin-top:15px;
+
+border-radius:15px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(212,175,55,.15);
+
+}
+
+.userCard button{
+
+background:#c0392b;
+
+border:none;
+
+color:white;
+
+padding:10px;
+
+border-radius:10px;
+
+cursor:pointer;
+
+width:55px;
+
+}
+
