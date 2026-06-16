@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>ZM User</title>
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+
+body{
+
+margin:0;
+
+background:#050505;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+
+font-family:Arial;
+
+color:white;
+
+}
+
+.box{
+
+padding:35px;
+
+background:#111;
+
+border:1px solid #d4af37;
+
+border-radius:20px;
+
+text-align:center;
+
+width:320px;
+
+}
+
+h1{
+
+color:#d4af37;
+
+}
+
+button{
+
+margin-top:20px;
+
+padding:12px;
+
+width:100%;
+
+background:#d4af37;
+
+border:none;
+
+border-radius:10px;
+
+font-size:16px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>👤 User Dashboard</h1>
+
+<h2 id="name"></h2>
+
+<p>Welcome to ZM Secure Project</p>
+
+<button onclick="logout()">Logout</button>
+
+</div>
+
+<script>
+
+document.getElementById("name").innerHTML=
+localStorage.getItem("currentUser");
+
+function logout(){
+
+localStorage.removeItem("currentUser");
+
+window.location.href="index.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
