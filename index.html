@@ -1,9 +1,210 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ZM Project</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+
+background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+overflow:hidden;
+
+}
+
+.card{
+
+width:350px;
+
+padding:30px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border-radius:20px;
+
+box-shadow:0 0 30px rgba(0,0,0,.4);
+
+text-align:center;
+
+}
+
+.logo{
+
+font-size:40px;
+
+margin-bottom:10px;
+
+}
+
+h1{
+
+color:white;
+
+}
+
+p{
+
+color:#cbd5e1;
+
+margin-bottom:25px;
+
+}
+
+input{
+
+width:100%;
+
+padding:14px;
+
+margin-top:15px;
+
+background:#1e293b;
+
+border:none;
+
+outline:none;
+
+border-radius:10px;
+
+color:white;
+
+font-size:15px;
+
+}
+
+button{
+
+width:100%;
+
+padding:14px;
+
+margin-top:20px;
+
+background:#2563eb;
+
+color:white;
+
+border:none;
+
+border-radius:10px;
+
+font-size:16px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.03);
+
+background:#1d4ed8;
+
+}
+
+#error{
+
+margin-top:15px;
+
+color:#ff4d4d;
+
+font-size:14px;
+
+}
+
+.footer{
+
+margin-top:25px;
+
+color:#94a3b8;
+
+font-size:12px;
+
+}
+
+</style>
+
 </head>
+
 <body>
-<h1>ZM Project Loading...</h1>
+
+<div class="card">
+
+<div class="logo">🔒</div>
+
+<h1>ZM Project</h1>
+
+<p>Secure Communication Portal</p>
+
+<input type="text" id="user" placeholder="Admin Username">
+
+<input type="password" id="pass" placeholder="Password">
+
+<button onclick="login()">LOGIN</button>
+
+<div id="error"></div>
+
+<div class="footer">
+Version 1.0
+</div>
+
+</div>
+
+<script>
+
+function login(){
+
+let u=document.getElementById("user").value;
+
+let p=document.getElementById("pass").value;
+
+if(u=="admin" && p=="zm@2026"){
+
+document.getElementById("error").style.color="#00ff99";
+
+document.getElementById("error").innerHTML="Login Successful...";
+
+setTimeout(function(){
+
+document.body.innerHTML="<h1 style='color:white;text-align:center;width:100%;font-family:Arial;'>👑 Welcome Admin<br><br>ZM Project Phase 1 Completed 🚀</h1>";
+
+},1000);
+
+}
+
+else{
+
+document.getElementById("error").style.color="red";
+
+document.getElementById("error").innerHTML="Invalid Username or Password";
+
+}
+
+}
+
+</script>
+
 </body>
 </html>
