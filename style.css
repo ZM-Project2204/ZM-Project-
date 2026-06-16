@@ -1,1 +1,130 @@
-/* ZM Project CSS */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#020617,#0f172a,#1e293b);
+    overflow:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    width:350px;
+    height:350px;
+    top:-120px;
+    left:-120px;
+    background:#2563eb55;
+    filter:blur(120px);
+    border-radius:50%;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:300px;
+    height:300px;
+    bottom:-100px;
+    right:-100px;
+    background:#06b6d455;
+    filter:blur(120px);
+    border-radius:50%;
+}
+
+.card{
+    width:360px;
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 10px 40px rgba(0,0,0,.45);
+    position:relative;
+    z-index:2;
+}
+
+.logo{
+    font-size:52px;
+    margin-bottom:10px;
+}
+
+h1{
+    color:white;
+    font-size:30px;
+}
+
+p{
+    color:#94a3b8;
+    margin-top:8px;
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    margin-top:15px;
+    padding:14px;
+    background:#0f172a;
+    border:1px solid #334155;
+    color:white;
+    border-radius:12px;
+    font-size:15px;
+    transition:.3s;
+}
+
+input:focus{
+    outline:none;
+    border-color:#3b82f6;
+    box-shadow:0 0 15px rgba(37,99,235,.4);
+}
+
+button{
+    width:100%;
+    margin-top:20px;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(90deg,#2563eb,#3b82f6);
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 0 20px rgba(37,99,235,.5);
+}
+
+#error{
+    margin-top:15px;
+    color:#ef4444;
+    font-size:14px;
+}
+
+.footer{
+    margin-top:25px;
+    color:#64748b;
+    font-size:12px;
+}
+
+@media(max-width:420px){
+
+.card{
+    width:92%;
+    padding:25px;
+}
+
+h1{
+    font-size:26px;
+}
+
+}
