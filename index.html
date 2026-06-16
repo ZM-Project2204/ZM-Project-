@@ -5,44 +5,68 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ZM Project</title>
 
+<link rel="stylesheet" href="style.css">
+
 <style>
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+font-family:'Segoe UI',sans-serif;
 }
 
 body{
-
-background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
-
 height:100vh;
-
 display:flex;
-
 justify-content:center;
-
 align-items:center;
-
+background:
+linear-gradient(135deg,#020617,#0f172a,#1e293b);
 overflow:hidden;
+}
 
+body::before{
+content:"";
+position:absolute;
+width:350px;
+height:350px;
+background:#2563eb55;
+border-radius:50%;
+top:-100px;
+left:-100px;
+filter:blur(120px);
+}
+
+body::after{
+content:"";
+position:absolute;
+width:300px;
+height:300px;
+background:#06b6d455;
+border-radius:50%;
+bottom:-100px;
+right:-100px;
+filter:blur(120px);
 }
 
 .card{
 
-width:350px;
+width:360px;
 
-padding:30px;
+padding:35px;
 
-background:rgba(255,255,255,.08);
+background:rgba(255,255,255,.06);
 
-backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.08);
 
-border-radius:20px;
+backdrop-filter:blur(18px);
 
-box-shadow:0 0 30px rgba(0,0,0,.4);
+border-radius:22px;
+
+box-shadow:0 10px 40px rgba(0,0,0,.5);
+
+z-index:10;
 
 text-align:center;
 
@@ -50,7 +74,7 @@ text-align:center;
 
 .logo{
 
-font-size:40px;
+font-size:50px;
 
 margin-bottom:10px;
 
@@ -60,13 +84,21 @@ h1{
 
 color:white;
 
+font-size:30px;
+
+letter-spacing:1px;
+
 }
 
 p{
 
-color:#cbd5e1;
+color:#94a3b8;
+
+margin-top:8px;
 
 margin-bottom:25px;
+
+font-size:14px;
 
 }
 
@@ -78,17 +110,27 @@ padding:14px;
 
 margin-top:15px;
 
-background:#1e293b;
+background:#0f172a;
 
-border:none;
+border:1px solid #334155;
 
-outline:none;
-
-border-radius:10px;
+border-radius:12px;
 
 color:white;
 
 font-size:15px;
+
+transition:.3s;
+
+}
+
+input:focus{
+
+border:1px solid #3b82f6;
+
+box-shadow:0 0 15px #2563eb55;
+
+outline:none;
 
 }
 
@@ -100,27 +142,29 @@ padding:14px;
 
 margin-top:20px;
 
-background:#2563eb;
-
-color:white;
+background:linear-gradient(90deg,#2563eb,#3b82f6);
 
 border:none;
 
-border-radius:10px;
+border-radius:12px;
 
 font-size:16px;
+
+color:white;
 
 cursor:pointer;
 
 transition:.3s;
 
+font-weight:bold;
+
 }
 
 button:hover{
 
-transform:scale(1.03);
+transform:translateY(-2px);
 
-background:#1d4ed8;
+box-shadow:0 0 20px #2563eb88;
 
 }
 
@@ -138,7 +182,7 @@ font-size:14px;
 
 margin-top:25px;
 
-color:#94a3b8;
+color:#64748b;
 
 font-size:12px;
 
@@ -158,53 +202,21 @@ font-size:12px;
 
 <p>Secure Communication Portal</p>
 
-<input type="text" id="user" placeholder="Admin Username">
+<input id="user" placeholder="Admin Username">
 
-<input type="password" id="pass" placeholder="Password">
+<input id="pass" type="password" placeholder="Password">
 
 <button onclick="login()">LOGIN</button>
 
 <div id="error"></div>
 
 <div class="footer">
-Version 1.0
+Powered by ZM Secure System v2.0
 </div>
 
 </div>
 
-<script>
-
-function login(){
-
-let u=document.getElementById("user").value;
-
-let p=document.getElementById("pass").value;
-
-if(u=="admin" && p=="zm@2026"){
-
-document.getElementById("error").style.color="#00ff99";
-
-document.getElementById("error").innerHTML="Login Successful...";
-
-setTimeout(function(){
-
-document.body.innerHTML="<h1 style='color:white;text-align:center;width:100%;font-family:Arial;'>👑 Welcome Admin<br><br>ZM Project Phase 1 Completed 🚀</h1>";
-
-},1000);
-
-}
-
-else{
-
-document.getElementById("error").style.color="red";
-
-document.getElementById("error").innerHTML="Invalid Username or Password";
-
-}
-
-}
-
-</script>
+<script src="app.js"></script>
 
 </body>
 </html>
