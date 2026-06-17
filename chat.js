@@ -1,3 +1,4 @@
+let currentUser = localStorage.getItem("currentUser"); document.getElementById("chatUser").innerHTML = "💬 " + currentUser;
 let chat = JSON.parse(localStorage.getItem("chat")) || [];
 
 function render() {
