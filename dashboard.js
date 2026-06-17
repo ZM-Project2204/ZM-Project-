@@ -1,3 +1,12 @@
+import { db } from "./firebase.js";
+
+import {
+  collection,
+  addDoc,
+  getDocs,
+  deleteDoc,
+  doc
+} from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 let users = JSON.parse(localStorage.getItem("users")) || [];
 
 function renderUsers(){
