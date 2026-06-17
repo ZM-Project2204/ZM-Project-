@@ -1,91 +1,136 @@
+```html
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
-<title>ZM User</title>
-
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZM User Dashboard</title>
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
 
 body{
-
-margin:0;
-
-background:#050505;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-height:100vh;
-
-font-family:Arial;
-
+background:linear-gradient(135deg,#020617,#0f172a,#1e293b);
 color:white;
-
+min-height:100vh;
+padding:20px;
 }
 
-.box{
-
-padding:35px;
-
-background:#111;
-
-border:1px solid #d4af37;
-
-border-radius:20px;
-
+.header{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(15px);
+padding:20px;
+border-radius:18px;
 text-align:center;
-
-width:320px;
-
+border:1px solid rgba(255,255,255,.08);
 }
 
-h1{
+.header h1{
+font-size:30px;
+}
 
-color:#d4af37;
+.header p{
+color:#94a3b8;
+margin-top:8px;
+}
 
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:15px;
+margin-top:25px;
+}
+
+.card{
+background:rgba(255,255,255,.05);
+padding:20px;
+border-radius:18px;
+text-align:center;
+cursor:pointer;
+transition:.3s;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 0 20px rgba(59,130,246,.3);
+}
+
+.icon{
+font-size:35px;
+margin-bottom:10px;
+}
+
+.status{
+margin-top:25px;
+background:rgba(255,255,255,.05);
+padding:20px;
+border-radius:18px;
+text-align:center;
+border:1px solid rgba(255,255,255,.08);
 }
 
 button{
-
-margin-top:20px;
-
-padding:12px;
-
 width:100%;
-
-background:#d4af37;
-
+padding:14px;
+margin-top:25px;
 border:none;
-
-border-radius:10px;
-
+border-radius:12px;
+background:#2563eb;
+color:white;
 font-size:16px;
-
+cursor:pointer;
 }
 
+button:hover{
+background:#1d4ed8;
+}
 </style>
 
 </head>
 
 <body>
 
-<div class="box">
+<div class="header">
+<h1>👤 Welcome</h1>
+<p id="name"></p>
+</div>
 
-<h1>👤 User Dashboard</h1>
+<div class="grid">
 
-<h2 id="name"></h2>
+<div class="card">
+<div class="icon">💬</div>
+<h3>Private Chat</h3>
+</div>
 
-<p>Welcome to ZM Secure Project</p>
+<div class="card">
+<div class="icon">👥</div>
+<h3>Users</h3>
+</div>
 
-<button onclick="logout()">Logout</button>
+<div class="card">
+<div class="icon">📁</div>
+<h3>Files</h3>
+</div>
+
+<div class="card">
+<div class="icon">⚙️</div>
+<h3>Settings</h3>
+</div>
 
 </div>
+
+<div class="status">
+<h2>🟢 Online</h2>
+<p>Welcome to ZM Secure Communication System</p>
+</div>
+
+<button onclick="logout()">🚪 Logout</button>
 
 <script>
 
@@ -103,5 +148,5 @@ window.location.href="index.html";
 </script>
 
 </body>
-
 </html>
+```
