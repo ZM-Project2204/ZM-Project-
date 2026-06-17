@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZM Private Chat</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+background:#081120;
+height:100vh;
+display:flex;
+flex-direction:column;
+color:white;
+}
+
+.header{
+height:70px;
+background:#111827;
+display:flex;
+align-items:center;
+padding:0 20px;
+font-size:22px;
+font-weight:bold;
+border-bottom:1px solid #334155;
+}
+
+.chatbox{
+flex:1;
+overflow:auto;
+padding:20px;
+}
+
+.msg{
+max-width:70%;
+padding:12px;
+margin:10px 0;
+border-radius:12px;
+}
+
+.me{
+background:#2563eb;
+margin-left:auto;
+}
+
+.other{
+background:#1f2937;
+}
+
+.bottom{
+display:flex;
+padding:15px;
+background:#111827;
+}
+
+.bottom input{
+flex:1;
+padding:12px;
+border:none;
+border-radius:10px;
+font-size:15px;
+}
+
+.bottom button{
+margin-left:10px;
+padding:12px 20px;
+background:#2563eb;
+border:none;
+border-radius:10px;
+color:white;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+💬 Private Chat
+
+</div>
+
+<div class="chatbox" id="chatbox">
+
+<div class="msg other">
+Welcome to ZM Chat
+</div>
+
+</div>
+
+<div class="bottom">
+
+<input id="message" placeholder="Type Message...">
+
+<button onclick="send()">Send</button>
+
+</div>
+
+<script src="chat.js"></script>
+
+</body>
+</html>
