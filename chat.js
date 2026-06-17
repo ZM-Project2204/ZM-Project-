@@ -38,6 +38,27 @@ render();
 }
 
 render();
+function loadUsers(){
+
+let users = JSON.parse(localStorage.getItem("users")) || [];
+
+let sidebar = document.querySelector(".sidebar");
+
+sidebar.innerHTML = "<h2>👥 Users</h2>";
+
+users.forEach(user=>{
+
+sidebar.innerHTML += `
+<div class="user">
+🟢 ${user.username}
+</div>
+`;
+
+});
+
+}
+
+loadUsers();
 ```javascript
 document.getElementById("message").addEventListener("keypress", function(event){
 
