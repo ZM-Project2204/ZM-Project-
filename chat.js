@@ -37,3 +37,16 @@ render();
 }
 
 render();
+```javascript
+document.getElementById("message").addEventListener("keypress", function(event){
+
+if(event.key==="Enter"){
+
+event.preventDefault();
+
+send();
+
+}
+
+});
+```
